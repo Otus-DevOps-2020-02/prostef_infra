@@ -36,5 +36,3 @@ ssh someinternalhost
 bastion_IP = 34.65.214.231
 someinternalhost_IP = 10.172.0.3
 ```
-
-#Конец
