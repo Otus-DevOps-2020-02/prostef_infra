@@ -39,7 +39,7 @@ someinternalhost_IP = 10.172.0.3
 
 ## ДЗ Деплой тестового приложения:
 ```
-testapp_IP = 35.198.167.169
+testapp_IP = 34.65.246.13
 testapp_port = 9292
 ```
 
