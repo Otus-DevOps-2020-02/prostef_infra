@@ -36,3 +36,19 @@ ssh someinternalhost
 bastion_IP = 34.65.214.231
 someinternalhost_IP = 10.172.0.3
 ```
+
+## ДЗ Деплой тестового приложения:
+```
+testapp_IP = 34.65.246.13
+testapp_port = 9292
+```
+
+### Создание инстанса со стартап скриптом:
+```
+gcloud compute instances create reddit-app2 --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --metadata-from-file startup-script=startup_script.sh
+```
+
+### Правило файрвола через консоль:
+```
+gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --target-tags=puma-server
+```
