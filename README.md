@@ -52,3 +52,12 @@ gcloud compute instances create reddit-app2 --boot-disk-size=10GB --image-family
 ```
 gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --target-tags=puma-server
 ```
+
+## Packer
+- Создан шаблон для Packer с пользовательскими переменными
+- Создан файл с пользовательскими переменными
+- Создан скрипт packer/files/init_reddit.sh, который устанавливает сервис reddit и запускает его
+- Создан файл packer/files/pumma.service сервиса reddit
+- Создан новый шаблон с указанием в блоке провиженоров файла pumma.service, а так же нового скрита init_reddit.sh
+- Создан новый скрипт config-scripts/create-reddit-vm.sh, который создает новый инстанс из созданного образа reddit-full
+- Все протестировано
