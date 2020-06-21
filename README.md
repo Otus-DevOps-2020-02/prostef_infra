@@ -69,3 +69,4 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --targ
 - В файле terraform.tfvars заданы значения входным переменным
 - Протестирована работа провиженоров
 - Добавлены новые входные переменные и протестирована работа команды terraform fmt
+- Выполнена команда terraform destroy
