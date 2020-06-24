@@ -86,3 +86,12 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --targ
 - Создан inventory.ylm с хостами
 - Создан clone.yml - playbook клонирования репозитория и выполнен он командой " ansible-playbook clone.yml "
 - Выполнена команда " ansible app -m command -a 'rm -rf ~/reddit' " - которая удалила репозиторий, был создан выше. Соотвественно при повторном выполнении playbook'a этот репозиторий склонируется заного
+
+## Ansible-2
+- Протестирован подход "Один playbook, один сценарий" в файле reddit_app_one_play.yml
+- Протестирован подход "Один плейбук, несколько сценариев" в файле reddit_app_multiple_plays.yml
+- Протестирован подход "Несколько плейбуков" в файле site.yml
+- В Packer в файлах app.json и db.json изменен провижининг на ansible
+- С помощью Packer пересобраны образы reddit-app-base и reddit-db-base
+- С помощью Terraform перевыпущены инстансы из образов
+- При помощи Ansible и плейбука site.yml выполнены все необходимые операции для свизи и работы приложения с БД
