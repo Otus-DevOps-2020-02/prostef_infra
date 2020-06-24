@@ -79,3 +79,10 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --targ
 - Протестировано создание Storage через выпшеписанный модуль
 - Выполнена команда terraform fmt
 - Выполнена команда terraform destroy
+
+## Ansible-1
+- Скачан и установлен Ansible
+- Создан ansible.cfg с необходимыми параметрами
+- Создан inventory.ylm с хостами
+- Создан clone.yml - playbook клонирования репозитория и выполнен он командой " ansible-playbook clone.yml "
+- Выполнена команда " ansible app -m command -a 'rm -rf ~/reddit' " - которая удалила репозиторий, был создан выше. Соотвественно при повторном выполнении playbook'a этот репозиторий склонируется заного
