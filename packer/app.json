@@ -10,7 +10,7 @@
             "project_id": "{{user `project_id`}}",
             "image_name": "reddit-app-base-{{timestamp}}",
             "image_family": "reddit-app-base",
-	    "source_image_family": "{{user `source_image_family`}}",
+	        "source_image_family": "{{user `source_image_family`}}",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
             "machine_type": "{{user `machine_type`}}",
@@ -24,7 +24,9 @@
     "provisioners": [
         {
             "type": "ansible",
-            "playbook_file": "ansible/playbooks/packer_app.yml"
+            "playbook_file": "ansible/playbooks/packer_app.yml",
+            "ansible_env_vars": ["ANSIBLE_ROLES_PATH={{ pwd }}/ansible/roles"],
+            "extra_arguments": ["--tags", "install"]
         }
     ]
 }
